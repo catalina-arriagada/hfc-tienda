@@ -12,7 +12,7 @@ const port = 10000;
 
 // Middleware
 app.use(cors({
-    origin: 'http://localhost:3000', // Reemplazar con la URL del frontend
+    origin: 'https://hfc-tienda.onrender.com', // Reemplazar con la URL del frontend
 }));
 app.use(express.json());
 
