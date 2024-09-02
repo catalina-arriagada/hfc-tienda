@@ -28,9 +28,7 @@ export default function Login() {
         localStorage.setItem('token', result.token);
         setMensaje(result.message);
         alert(result.message);
-        setTimeout(() => {
-          router.push('/'); // Redirigir a la página principal
-        }, 2000);
+        router.push('/'); 
         
       } else {
         setError(result.error);

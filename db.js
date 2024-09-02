@@ -8,7 +8,7 @@ dotenv.config();
 const saltRounds = 10;
 
 const app = express();
-const port = 5000;
+const port = 10000;
 
 // Middleware
 app.use(cors({
