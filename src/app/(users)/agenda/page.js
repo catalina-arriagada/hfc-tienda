@@ -21,7 +21,7 @@ const Agenda = () => {
         return;
       }
 
-      const response = await fetch('/api/citas', {
+      const response = await fetch('https://hfc-tienda.onrender.com/api/citas', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

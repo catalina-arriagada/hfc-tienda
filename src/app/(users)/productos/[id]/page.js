@@ -46,7 +46,7 @@ export default async function ProductPage({ params }) {
   //Añadir producto al carrito
   const agregarAlCarrito = async () => {
     try {
-      const res = await fetch("/api/pedido", {
+      const res = await fetch("https://hfc-tienda.onrender.com/api/pedido", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -66,7 +66,7 @@ export default async function ProductPage({ params }) {
 
       alert("Producto añadido al carrito");
     } catch (error) {
-      console.error("Error en la ruta /api/pedido:", error);
+      console.error("Error en la ruta https://hfc-tienda.onrender.com/api/pedido:", error);
       alert("Error al añadir al carrito");
     }
   };

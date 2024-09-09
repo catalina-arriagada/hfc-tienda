@@ -20,14 +20,14 @@ const Carritos = () => {
           return;
         }
 
-        const response = await fetch('/api/pedidos', {
+        const response = await fetch('https://hfc-tienda.onrender.com/api/pedidos', {
           headers: {
             'Authorization': `Bearer ${token}`
           }
         });
 
         if (!response.ok) {
-          router.push("/login");
+          router.push("https://hfc-tienda.onrender.com/login");
 
         }
 

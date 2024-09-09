@@ -255,6 +255,6 @@ app.post('/usuarios/validar', async (req, res) => {
 //   res.sendFile(path.join(__dirname, 'build', 'index.html'));
 // });
 
-  app.listen(port,'0.0.0.0',() => {
+  app.listen(port,() => {
       console.log(`Servidor corriendo en puerto ${port}`);
   });

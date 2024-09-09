@@ -15,7 +15,7 @@ export default function Paypal() {
             style={{ color: 'blue', layout: "horizontal" }}
             createOrder={async () => {
               try {
-                const res = await fetch('/api/checkout', { method: "POST" });
+                const res = await fetch('https://hfc-tienda.onrender.com/api/checkout', { method: "POST" });
                 if (!res.ok) throw new Error('Error al crear la orden');
                 const order = await res.json();
                 if (!order.id) throw new Error('No se recibió un ID de orden');
