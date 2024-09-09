@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export async function getServerSideProps() {
   // Llamada a la API para obtener los productos
-  const res = await fetch('http://localhost:5000/productos');
+  const res = await fetch('https://hfc-tienda.onrender.com/productos');
   const productos = await res.json();
   console.log(productos);
   return {
