@@ -25,7 +25,9 @@ const CitasPage = () => {
         });
 
         if (!response.ok) {
-          throw new Error('Error al obtener las citas');
+          //throw new Error('Error al obtener las citas');
+          router.push('/login');
+          return;
         }
 
         const data = await response.json();
