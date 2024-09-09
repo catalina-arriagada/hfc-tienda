@@ -1,17 +1,31 @@
 import React from "react";
 import Link from "next/link";
+import dotenv from 'dotenv';
+dotenv.config();
 
 export async function getServerSideProps() {
-  // Llamada a la API para obtener los productos
-  const res = await fetch('https://hfc-tienda.onrender.com/productos');
-  const productos = await res.json();
-  console.log(productos);
-  return {
-    props: {
-      productos, // Pasar productos como prop
-    },
-  };
+  try {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/productos`);
+    if (!res.ok) {
+      throw new Error(`Error al obtener los productos: ${res.statusText}`);
+    }
+    const productos = await res.json();
+    return {
+      props: {
+        productos,
+      },
+    };
+  } catch (error) {
+    console.error('Error en getServerSideProps:', error);
+    return {
+      props: {
+        productos: [],
+        error: error.message || 'Error desconocido',
+      },
+    };
+  }
 }
+
 
 const Productos = ({ productos = [] }) => {
   if (!productos.length) {
