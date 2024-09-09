@@ -1,11 +1,8 @@
 import React from "react";
 import Link from "next/link";
-import dotenv from 'dotenv';
-dotenv.config();
-
 export async function getServerSideProps() {
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/productos`);
+    const res = await fetch(`https://hfc-tienda.onrender.com/productos`);
     if (!res.ok) {
       throw new Error(`Error al obtener los productos: ${res.statusText}`);
     }
